@@ -4,19 +4,27 @@ import io.restassured.response.Response;
 
 public class HelloWorldTest {
 
+
+    @Test
+    public void helloFromKonstantin() {
+        System.out.println("Hello from Konstantin!");
+    }
+
+
+
     /*@Test
     public void testHelloWorld() {
     System.out.println("Hello World!");
 }*/
 
 
-    @Test
+    /*@Test
     public void testHelloWorld() {
        Response response = RestAssured
                .get("https://playground.learnqa.ru/api/hello")
                .andReturn();
        response.prettyPrint();
-    }
+    }*/
 
 
 }
