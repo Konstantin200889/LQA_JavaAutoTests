@@ -21,21 +21,23 @@ public class HelloWorldTest {
     private final static String testUrl = "https://playground.learnqa.ru/api";
 
     /*@Test
-    public void testHomeWork1() {
+    public void test1() {
                 JsonPath response =  RestAssured
                 .get(testUrl + "/get_json_homework")
                         .jsonPath();
                 response.prettyPrint();
+
         ArrayList allMessages = response.get("messages");
         HashMap SecondMessage = (HashMap) allMessages.get(1);
-        String SecondMessageText = (String) SecondMessage.get("message");
-        System.out.println(SecondMessageText);
+        String secondMessageText = response.get("messages[1].message");
+        Assertions.assertEquals(secondMessageText, "And this is a second message");
+        System.out.println(secondMessageText);
     }*/
 
 
 
     /*@Test
-    public void testHomeWork2() {
+    public void test2() {
         Response response = RestAssured
                 .given()
                 .redirects()
@@ -54,7 +56,7 @@ public class HelloWorldTest {
 
 
     /*@Test
-    public void testHomeWork3() {
+    public void test3() {
         int i = 0;
         String url = testUrl + "/long_redirect";
         do {
@@ -83,7 +85,7 @@ public class HelloWorldTest {
 
 
     /*@Test
-    public void testHomeWork4() throws InterruptedException {
+    public void test4() throws InterruptedException {
         JsonPath response1 = RestAssured
                 .get(testUrl+ "/longtime_job")
                 .jsonPath();
