@@ -44,11 +44,6 @@ public void testAuthUser() {
             assertTrue(userIdOnCheck > 0, "Unexpected user id" + userIdOnCheck);
             assertEquals(userIdOnAuth, userIdOnCheck, "'userIdOnAuth' is not equals 'userIdOnCheck'");
 
-}
-
-
-
-
-
+    }
 
 }

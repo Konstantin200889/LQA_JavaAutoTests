@@ -1,5 +1,8 @@
+import io.restassured.http.Headers;
 import io.restassured.path.json.JsonPath;
 import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -87,7 +90,7 @@ public class ExampleTests {
 
 
     /*@Test
-    public void testCheckTextAndHeadersAndCookie() {
+    public void testCheckHeadersAndCookie() {
     Map<String, String>data = new HashMap<>();
     data.put("login", "secret_login");
     data.put("password", "secret_pass");
@@ -99,10 +102,8 @@ public class ExampleTests {
             .post(testUrl + "/get_auth_cookie")
             .andReturn();
 
+        System.out.println("\nStatusCode:");
         System.out.println(response.getStatusCode()); // проверяем статус код
-
-        System.out.println("\nPretty text:"); // распечатываем текст
-        response.prettyPrint();
 
         System.out.println("\nHeaders:");
         Headers responseHeaders = response.getHeaders(); // распечатываем заголовки
@@ -182,7 +183,6 @@ public class ExampleTests {
                         Assertions.assertNotNull(fieldResult, "field result is empty");
                         System.out.println(newFieldStatus);
                         System.out.println(fieldResult);
-
             }*/
 
 
@@ -190,8 +190,9 @@ public class ExampleTests {
     // в @ParameterizedTest мы передаем набор параметров, тест будет запускаться столько раз, сколько параметров передано
 
     /*@ParameterizedTest
-    @ValueSource(strings = {"", "John", "Pete"})// в этом теге передаем набор параметров
+    @ValueSource(strings = {"", "John", "Pete"}) // в этом теге передаем набор параметров
     // мы передали 3 параметра в тест, теперь тест будет запущен 3 раза, каждый раз подставляя очередной параметр
+
     public void checkUserNameParameterizedTest(String name) { // в String name будут по очереди передаваться значения из (strings = {"", "John", "Pete"})
         Map <String, String> queryParams = new HashMap<>();
 
@@ -210,15 +211,6 @@ public class ExampleTests {
         assertEquals("Hello, " + expectedName, answer, "wrong response"); // извлекаем поле со значением имени и сравниваем с ожидаемым результатом
         response.prettyPrint();
     }*/
-
-
-
-
-
-
-
-
-
 
 
 }
