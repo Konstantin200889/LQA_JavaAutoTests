@@ -43,7 +43,7 @@ public class ExampleTests {
 
 
     /*@Test
-    public void testRestAssured() {
+    public void testCheckUserName() {
         Map<String, String> params = new HashMap<>(); // создали коллекцию Map для хранения нужных данных
         params.put("name", "john");
         JsonPath response = RestAssured // JsonPath - класс для парсинга Json (десериализует полученный Json в объект и достает нужные данные)
@@ -87,7 +87,7 @@ public class ExampleTests {
 
 
     /*@Test
-    public void testGetTextAndHeadersAndCookie() {
+    public void testCheckTextAndHeadersAndCookie() {
     Map<String, String>data = new HashMap<>();
     data.put("login", "secret_login");
     data.put("password", "secret_pass");
@@ -147,7 +147,7 @@ public class ExampleTests {
 
 
             /*@Test
-            public void testGetTokenAndAuth() throws InterruptedException {
+            public void testGetTokenAndThenAuth() throws InterruptedException {
                 JsonPath response1 = RestAssured
                         .get(testUrl+ "/longtime_job")
                         .jsonPath();
@@ -192,7 +192,7 @@ public class ExampleTests {
     /*@ParameterizedTest
     @ValueSource(strings = {"", "John", "Pete"})// в этом теге передаем набор параметров
     // мы передали 3 параметра в тест, теперь тест будет запущен 3 раза, каждый раз подставляя очередной параметр
-    public void testRestAssured5(String name) { // в String name будут по очереди передаваться значения из (strings = {"", "John", "Pete"})
+    public void checkUserNameParameterizedTest(String name) { // в String name будут по очереди передаваться значения из (strings = {"", "John", "Pete"})
         Map <String, String> queryParams = new HashMap<>();
 
         if (name.length() > 0) { // обрабатываем ситуацию, когда имя - пустое
