@@ -22,9 +22,11 @@ public class ExampleTests {
     /*@Test
     public void testStatusCodeCheck() {
         Response response = RestAssured
-                .get(testUrl + "/map1")
+                .get(testUrl + "/map")
                 .andReturn();
-        assertEquals(200, response.statusCode(), "unexpected code"); // проверяем соответствие статус кода ожиданиям
+        assertEquals(200, response.getStatusCode(), "unexpected code"); // проверяем соответствие статус кода ожиданиям
+        int statusCode = response.getStatusCode();
+        System.out.println(statusCode);
         //для сравнения результата сначала передаем ожидаемое значение, а затем действительное
     }*/
 
@@ -32,7 +34,6 @@ public class ExampleTests {
 
     /*@Test
       public void testGetSecondMessageFromJson() {
-
                 JsonPath response =  RestAssured
                 .get(testUrl + "/get_json_homework")
                         .jsonPath();
