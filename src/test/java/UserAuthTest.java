@@ -2,10 +2,10 @@ import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.Headers;
-
+import io.restassured.http.Headers;
 import java.util.HashMap;
 import java.util.Map;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -25,8 +25,8 @@ public void testAuthUser() {
             .post("https://playground.learnqa.ru/api/user/login")
             .andReturn();
 
-            Map<String, String> cookies = responseGetAuth.getCookies(); // вытаскиваем из тела куки, заголовки, id пользователя
-            Headers headers = responseGetAuth.getHeaders();
+            Map<String, String> cookies = responseGetAuth.getCookies();
+            Headers headers = (Headers) responseGetAuth.getHeaders();
             int userIdOnAuth = responseGetAuth.jsonPath().getInt("user_id");
 
             assertEquals(200, responseGetAuth.statusCode(), "wrong status code");
