@@ -79,7 +79,7 @@ public class ExampleTests {
                 .given()
                 .headers(headers) // отправили мапу headers с заголовками в теле запроса
                 .when()
-                .get("https://playground.learnqa.ru/api/show_all_headers")
+                .get(testUrl + "/show_all_headers")
                 .andReturn();
         int statusCode = response.getStatusCode(); //извлекаем и печатаем статус код
         response.prettyPrint();
